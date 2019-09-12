@@ -86,6 +86,19 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/add.ts":
+/*!********************!*\
+  !*** ./src/add.ts ***!
+  \********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ((n, nn) => n + nn);
+
+/***/ }),
+
 /***/ "./src/index.ts":
 /*!**********************!*\
   !*** ./src/index.ts ***!
@@ -95,7 +108,9 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _add__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add */ "./src/add.ts");
 
+console.log(Object(_add__WEBPACK_IMPORTED_MODULE_0__["default"])(1, 2));
 
 /***/ })
 

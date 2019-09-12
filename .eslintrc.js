@@ -25,6 +25,14 @@ module.exports = {
             parserOptions: {
                 sourceType: "node"
             }
+        },
+        {
+            files: ["test/**/*"],
+            env: {
+                node: true,
+                es6: true,
+                jest: true
+            }
         }
     ]
 };

@@ -27,7 +27,7 @@ module.exports = {
             }
         },
         {
-            files: ["test/**/*"],
+            files: ["__tests__/**/*"],
             env: {
                 node: true,
                 es6: true,

@@ -32,3 +32,44 @@ export default function sameFrequency(one: number, two: number): boolean {
 
     return true;
 }
+
+// recursive version.
+
+function getDefault<T>(def: T, key: string, map: Map<string, T>): T {
+    return map.get(key) || def;
+}
+
+function reqMap(str: string, map = new Map<string, number>()): Map<string, number> {
+    if (str.length >= 1) {
+        const [head, tail] = [str.slice(0, 1), str.slice(1)];
+        if (/\w/.test(head)) {
+            map.set(head.toLowerCase(), getDefault(0, head.toLowerCase(), map) + 1);
+        }
+        return reqMap(tail, map);
+    }
+
+    return map;
+}
+
+function digitFreq(n: number): Map<string, number> {
+    return reqMap(String(n));
+}
+
+function compareIter(arr: [string, number][], map: Map<string, number>): boolean {
+    if (arr.length) {
+        const [[k, v], ...tail] = arr;
+        if (map.get(k) !== v) return false;
+        return compareIter(tail, map);
+    }
+
+    return true;
+}
+
+function compareFreqMaps(mapOne: Map<string, number>, mapTwo: Map<string, number>): boolean {
+    if (mapOne.size !== mapTwo.size) return false;
+    return compareIter([...mapOne.entries()], mapTwo);
+}
+
+export function recSameFrequency(one: number, two: number): boolean {
+    return compareFreqMaps(digitFreq(one), digitFreq(two));
+}

@@ -18,6 +18,10 @@ export default function areThereDuplicates(...args: string[] | number[]): boolea
     return false;
 }
 
+function recAreThereDupes(...args: string[] | number[]): boolean {
+    return true;
+}
+
 /* 
 Multipointer solution ---
 I should have known the solution was simply to sort first. Is sorting itself O(n log n)?

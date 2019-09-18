@@ -19,3 +19,23 @@ export default function countUniqueValues(arr: number[]): number[] {
 
     return arr.slice(0, slow);
 }
+
+export function recCountUniqueValues(arr: number[], cnt = 1): number {
+    if (arr.length > 2) {
+        const [first, ...tail] = arr;
+        cnt = first === tail[0] ? cnt : cnt + 1;
+        return recCountUniqueValues(tail, cnt);
+    }
+
+    if (arr.length === 2) {
+        const [first, second] = arr;
+        cnt = first === second ? cnt : cnt + 1;
+        return cnt;
+    }
+
+    if (arr.length === 1) {
+        return cnt;
+    }
+
+    return 0;
+}

@@ -5,26 +5,26 @@
 */
 
 export default function isSubsequence(subSeq: string, seq: string): boolean {
-    let pl = 0;
+  let pl = 0;
 
-    for (const char of seq) {
-        if (char === subSeq[pl]) {
-            pl += 1;
-            if (pl >= subSeq.length) {
-                return true;
-            }
-        }
+  for (const char of seq) {
+    if (char === subSeq[pl]) {
+      pl += 1;
+      if (pl >= subSeq.length) {
+        return true;
+      }
     }
-    return false;
+  }
+  return false;
 }
 
-/*
-    Recursive solution
+// Recursive solution
+// I didn't write this, so I'll annotate it.
 
-    function isSubsequence(str1, str2) {
-        if(str1.length === 0) return true
-        if(str2.length === 0) return false
-        if(str2[0] === str1[0]) return isSubsequence(str1.slice(1), str2.slice(1))  
-        return isSubsequence(str1, str2.slice(1))
-    }
-*/
+export function recIsSubsequence(str1: string, str2: string): boolean {
+  if (str1.length === 0) return true; //we are popping off strings as we go, if we reach the end of the sb..
+  if (str2.length === 0) return false; //if we hit the end of the str we are checking first.
+
+  if (str2[0] === str1[0]) return isSubsequence(str1.slice(1), str2.slice(1)); // if we find a dupe slice from both.
+  return isSubsequence(str1, str2.slice(1)); // else slice from only one.
+}

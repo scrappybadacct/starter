@@ -47,3 +47,11 @@ export function tail<T>(arr: T[]): T[] {
   const [, ...tail] = arr;
   return tail;
 }
+
+export function strHead(s: string): string {
+  return s.slice(0, 1);
+}
+
+export function strTail(s: string): string {
+  return s.slice(1);
+}

@@ -30,6 +30,9 @@
         "webpack-cli": "^3.3.8"
     },
     "dependencies": {
-        "fp-ts": "^2.0.5"
+        "fp-ts": "^2.0.5",
+        "fp-ts-contrib": "^0.1.5",
+        "monocle-ts": "^2.0.0",
+        "newtype-ts": "^0.3.2"
     }
 }

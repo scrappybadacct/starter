@@ -1,4 +1,6 @@
 import { HKT } from "fp-ts/lib/HKT";
+import { Newtype, iso } from "newtype-ts";
+import { freqMapWithOptions } from "../lib/freqMap";
 
 /* 
   This was an exercise in trying to approximate ADTs exactly as they do in F# into Typescript.
@@ -94,3 +96,8 @@ type Payment = {
   Currency: Currency;
   Method: PaymentMethod;
 };
+
+interface GBP extends Newtype<{ readonly GBP: "GBP" }, number> {}
+const GBP = iso<GBP>();
+const x = GBP.from(1.0);
+console.log(x);

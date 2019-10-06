@@ -22,14 +22,17 @@
         "babel-loader": "^8.0.6",
         "eslint": "^6.3.0",
         "eslint-config-prettier": "^6.3.0",
+        "fast-check": "^1.17.0",
         "jest": "^24.9.0",
         "prettier": "^1.18.2",
         "prettier-eslint": "^9.0.0",
+        "ts-node": "^8.4.1",
         "typescript": "^3.7.0-dev.20191001",
         "webpack": "^4.39.3",
         "webpack-cli": "^3.3.8"
     },
     "dependencies": {
+        "bent": "^7.0.2",
         "fp-ts": "^2.0.5",
         "fp-ts-contrib": "^0.1.5",
         "monocle-ts": "^2.0.0",

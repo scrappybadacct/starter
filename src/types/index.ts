@@ -1,3 +1,10 @@
+import { Eq } from "fp-ts/lib/Eq";
+import { iso } from "newtype-ts";
+import {
+  NonNegativeInteger,
+  prismNonNegativeInteger
+} from "newtype-ts/lib/NonNegativeInteger";
+
 export type FrequencyMap = Map<string, number>;
 
 // Recursive Json type seems to work.
@@ -10,3 +17,10 @@ export interface JsonValidObject {
 }
 
 export type Json = JsonArrays | JsonValidObject | JsonPrimitives;
+
+//
+// ─── NEW TYPES ─────────────────────────────────────────────────────────────────
+//
+
+export interface Index extends NonNegativeInteger {}
+export const index = prismNonNegativeInteger;

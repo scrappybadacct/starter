@@ -16,7 +16,9 @@ module.exports = {
     "@typescript-eslint/prefer-interface": 0,
     "no-constant-condition": 0,
     "@typescript-eslint/no-use-before-define": 0,
-    "@typescript-eslint/no-empty-interface": 0
+    "@typescript-eslint/no-empty-interface": 0,
+    "@typescript-eslint/no-unused-vars": 0,
+    "@typescript-eslint/explicit-function-return-type": 0
   },
   overrides: [
     {
